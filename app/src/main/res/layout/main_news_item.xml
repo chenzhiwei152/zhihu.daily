@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_item_list"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/dark_menu_listview_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/tv_topic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="今日热闻"
+        android:textColor="@color/light_news_topic"
+        android:textSize="13sp"
+        android:visibility="gone" />
+
+    <com.chen.develop.zhihudaily.View.RippleView
+        android:id="@+id/rv_ripper"
+        rv_centered="true"
+        app:rv_color="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <FrameLayout
+            android:id="@+id/fl_latest_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/card_dark"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+
+                <ImageView
+                    android:id="@+id/iv_title"
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@id/iv_title"
+                    android:padding="5dp"
+                    android:text="如何看待当下这种越来越普遍的“沉默”人格？"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        </FrameLayout>
+    </com.chen.develop.zhihudaily.View.RippleView>
+</LinearLayout>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\AndroidProgectDevelop\ZhihuDaily\Library\assets"/><source path="E:\AndroidProgectDevelop\ZhihuDaily\Library\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\AndroidProgectDevelop\ZhihuDaily\Library\src\debug\assets"/></dataSet></merger>
