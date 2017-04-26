@@ -1,6 +1,8 @@
 package com.chen.develop.zhihudaily.Fragment;
 
+import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,14 +14,23 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.chen.common.App.AppContext;
+import com.chen.common.DB.AllCache;
+import com.chen.common.NetUtils.ParserUtils;
+import com.chen.common.Utils.Constant;
+import com.chen.common.Utils.HttpUtils;
+import com.chen.common.Utils.ImageLoaderManager;
+import com.chen.common.Utils.JsonHttpResponseHandler;
+import com.chen.common.Utils.LogUtils;
+import com.chen.common.Utils.PreUtils;
+import com.chen.common.Utils.TextHttpResponseHandler;
 import com.chen.develop.zhihudaily.Activity.MainActivity;
+import com.chen.develop.zhihudaily.Activity.ShowInActivity;
+import com.chen.develop.zhihudaily.Activity.WeatherActivity;
 import com.chen.develop.zhihudaily.Bean.NewsListItem;
+import com.chen.develop.zhihudaily.Bean.WeatherBean;
+import com.chen.develop.zhihudaily.Config.Interface;
 import com.chen.develop.zhihudaily.R;
-import com.chen.develop.zhihudaily.Utils.Constant;
-import com.chen.develop.zhihudaily.Utils.HttpUtils;
-import com.chen.develop.zhihudaily.Utils.JsonHttpResponseHandler;
-import com.chen.develop.zhihudaily.Utils.PreUtils;
-import com.chen.develop.zhihudaily.Utils.TextHttpResponseHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +39,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.Bind;
 import cz.msebera.android.httpclient.Header;
 
 public class MenuFragment extends BaseFragment implements OnClickListener {
@@ -38,11 +50,19 @@ public class MenuFragment extends BaseFragment implements OnClickListener {
     // "设计日报", "大公司日报", "财经日报", "互联网安全", "开始游戏", "音乐日报", "动漫日报", "体育日报" };
     private List<NewsListItem> items;
     private Handler handler = new Handler();
-    private boolean isLight=true;
+    private boolean isLight = true;
     private NewsTypeAdapter mAdapter;
     private ImageView iv_weather_state;
-
-
+    private TextView tv_weather;
+    @Bind(R.id.tv_loacation)
+    TextView tv_loacation;
+    @Bind(R.id.tv_temp)
+    TextView tv_temp;
+    @Bind(R.id.ll_weather)
+    LinearLayout ll_weather;
+    private String mCityId;
+    private String mCityName;
+    private WeatherBean bean;
 
     private void parseJson(JSONObject response) {
         try {
@@ -74,11 +94,14 @@ public class MenuFragment extends BaseFragment implements OnClickListener {
         tv_backup = (TextView) view.findViewById(R.id.tv_backup);
         tv_download = (TextView) view.findViewById(R.id.tv_download);
         iv_weather_state = (ImageView) view.findViewById(R.id.iv_weather_state);
-        ll_home= (LinearLayout) view.findViewById(R.id.ll_home);
+        tv_weather = (TextView) view.findViewById(R.id.tv_weather);
+        ll_home = (LinearLayout) view.findViewById(R.id.ll_home);
         tv_download.setOnClickListener(this);
         tv_main = (TextView) view.findViewById(R.id.tv_main);
         ll_home = (LinearLayout) view.findViewById(R.id.ll_home);
         ll_home.setOnClickListener(this);
+        ll_weather.setOnClickListener(this);
+        ll_menu.setOnClickListener(this);
         lv_item = (ListView) view.findViewById(R.id.lv_item);
         lv_item.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -94,8 +117,6 @@ public class MenuFragment extends BaseFragment implements OnClickListener {
 
                 ((MainActivity) mActivity).setCurId(items.get(position).getId());
                 ((MainActivity) mActivity).closeMenu();
-
-
 
 
             }
@@ -136,23 +157,62 @@ public class MenuFragment extends BaseFragment implements OnClickListener {
 
             }
         }
-        /**
-         * 天气
-         */
-        if (HttpUtils.isNetworkConnected(getActivity())) {
+        getCityInfo();
 
-            HttpUtils.get("http://www.weather.com.cn/data/sk/101010100.html", new TextHttpResponseHandler() {
-                @Override
-                public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+    }
 
-                }
-
-                @Override
-                public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                    String json = responseString.toString();
-                }
-            });
+    public void getCityInfo() {
+        if (TextUtils.isEmpty(mCityId) || TextUtils.isEmpty(AllCache.get(getActivity()).getAsString("id"))) {
+            mCityId = "CN101010100";
+            mCityName = "北京";
+            GetWeatherBean(mCityId);
+        } else if (!mCityId.equals(AllCache.get(getActivity()).getAsString("id"))) {
+            mCityId = AllCache.get(getActivity()).getAsString("id");
+            mCityName = AllCache.get(getActivity()).getAsString("city");
+            GetWeatherBean(mCityId);
         }
+
+
+    }
+
+    /**
+     * 天气
+     */
+    public void GetWeatherBean(String city) {
+        LogUtils.e(Interface.GET_WEATHER_INFO);
+
+        HttpUtils.get(Interface.GET_WEATHER_INFO + city + "&key=f1248f309bec41689c0f1b632ac2a1ca", false, new TextHttpResponseHandler() {
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                LogUtils.e(responseString);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+
+                try {
+
+                    bean =  ParserUtils.parser(responseString, WeatherBean.class);
+                    if (bean != null) {
+                        ll_weather.setVisibility(View.VISIBLE);
+                        //天气描述
+                        tv_weather.setText(bean.getHeWeather5().get(0).getNow().getCond().getTxt());
+                        //温度
+                        tv_temp.setText(bean.getHeWeather5().get(0).getNow().getTmp() + "℃");
+                        //对应的图片
+                        ImageLoaderManager.getInstance(getActivity()).display(getActivity(),Interface.WEATHERBASE + bean.getHeWeather5().get(0).getNow().getCond().getCode() + Interface.WEATHERSUFFIX, iv_weather_state);
+                        tv_loacation.setText(mCityName);
+
+                    } else {
+                        ll_weather.setVisibility(View.GONE);
+                    }
+
+                } catch (Exception e) {
+                    LogUtils.e("解析失败:"+e.getMessage());
+                }
+
+            }
+        });
     }
 
     public class NewsTypeAdapter extends BaseAdapter {
@@ -190,8 +250,16 @@ public class MenuFragment extends BaseFragment implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ll_home:
-//                ((MainActivity) getActivity()).loadLatest();
                 ((MainActivity) getActivity()).closeMenu();
+                break;
+            case R.id.ll_weather:
+                Bundle bundle = new Bundle();
+                AppContext.getInstance().intentJump(getActivity(), WeatherActivity.class, bundle);
+                ((MainActivity) getActivity()).closeMenu();
+                break;
+            case R.id.ll_menu:
+//                Utils.showToast("敬请期待~");
+                AppContext.getInstance().intentJump(getActivity(), ShowInActivity.class);
                 break;
         }
     }
@@ -204,6 +272,7 @@ public class MenuFragment extends BaseFragment implements OnClickListener {
         tv_download.setTextColor(getResources().getColor(isLight ? R.color.light_menu_header_tv : R.color.dark_menu_header_tv));
         ll_home.setBackgroundColor(getResources().getColor(isLight ? R.color.light_menu_index_background : R.color.dark_menu_index_background));
         lv_item.setBackgroundColor(getResources().getColor(isLight ? R.color.light_menu_listview_background : R.color.dark_menu_listview_background));
+        ll_weather.setBackgroundColor(getResources().getColor(isLight ? R.color.light_menu_listview_background : R.color.dark_menu_listview_background));
         mAdapter.notifyDataSetChanged();
     }
 }

@@ -23,6 +23,7 @@
                 android:id="@+id/splash_ima"
                 android:layout_width="match_parent"
                 android:scaleType="centerCrop"
+                android:background="@mipmap/flash"
                 android:layout_height="wrap_content" />
 
             <TextView

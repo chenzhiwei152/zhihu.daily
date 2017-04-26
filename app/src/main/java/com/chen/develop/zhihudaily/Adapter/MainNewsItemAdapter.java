@@ -13,17 +13,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.chen.common.App.AppContext;
+import com.chen.common.Utils.Constant;
+import com.chen.common.Utils.ImageLoaderManager;
+import com.chen.common.Utils.LogUtils;
+import com.chen.common.Utils.PreUtils;
+import com.chen.common.View.RippleView;
 import com.chen.develop.zhihudaily.Activity.LatestContentActivity;
 import com.chen.develop.zhihudaily.Activity.MainActivity;
-import com.chen.develop.zhihudaily.App.AppContext;
 import com.chen.develop.zhihudaily.Bean.StoriesBean;
 import com.chen.develop.zhihudaily.R;
-import com.chen.develop.zhihudaily.Utils.Constant;
-import com.chen.develop.zhihudaily.Utils.LogUtils;
-import com.chen.develop.zhihudaily.Utils.PreUtils;
-import com.chen.develop.zhihudaily.View.RippleView;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,19 +37,12 @@ import butterknife.ButterKnife;
 public class MainNewsItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static List<StoriesBean> entities;
     private static Context context;
-    private ImageLoader mImageloader;
-    private DisplayImageOptions options;
     private boolean isLight;
     private final LayoutInflater mLayoutInflater;
 
     public MainNewsItemAdapter(Context context) {
         this.context = context;
         this.entities = new ArrayList<>();
-        mImageloader = ImageLoader.getInstance();
-        options = new DisplayImageOptions.Builder()
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .build();
         isLight = ((MainActivity) context).isLight();
         mLayoutInflater = LayoutInflater.from(context);
     }
@@ -59,11 +51,6 @@ public class MainNewsItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         this.context = context;
         this.entities = new ArrayList<>();
         this.entities.addAll(items);
-        mImageloader = ImageLoader.getInstance();
-        options = new DisplayImageOptions.Builder()
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .build();
         isLight = ((MainActivity) context).isLight();
         mLayoutInflater = LayoutInflater.from(context);
     }
@@ -136,14 +123,13 @@ public class MainNewsItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             ((ImageViewHolder) viewHolder).tv_title.setVisibility(View.VISIBLE);
             ((ImageViewHolder) viewHolder).iv_title.setVisibility(View.VISIBLE);
             ((ImageViewHolder) viewHolder).tv_title.setText(entity.getTitle());
-            mImageloader.displayImage(entity.getImages().get(0), ((ImageViewHolder) viewHolder).iv_title, options);
+            ImageLoaderManager.getInstance(context).display(context,entity.getImages().get(0), ((ImageViewHolder) viewHolder).iv_title);
         }
     }
 
     @Override
     public int getItemCount() {
         try {
-            LogUtils.e("listview大小:" + entities.size());
         } catch (Exception e) {
 
         }
@@ -178,19 +164,18 @@ public class MainNewsItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d("ImageViewHolder", "onClick--> position = " + getPosition());
-                    int[] startingLocation = new int[2];
-                    v.getLocationOnScreen(startingLocation);
-                    startingLocation[0] += v.getWidth() / 2;
-                    StoriesBean storiesEntity = new StoriesBean();
-                    storiesEntity.setId(MainNewsItemAdapter.getEntities().get(getPosition()).getId());
-                    storiesEntity.setTitle(MainNewsItemAdapter.getEntities().get(getPosition()).getTitle());
-                    Bundle bundle = new Bundle();
-                    bundle.putIntArray(Constant.START_LOCATION, startingLocation);
-                    bundle.putSerializable("entity",storiesEntity);
-                    bundle.putBoolean("isLight", ((MainActivity) context).isLight());
-                    LogUtils.e("isLight:"+((MainActivity) context).isLight());
-                    AppContext.getInstance().intentJump((Activity) MainNewsItemAdapter.context,LatestContentActivity.class,bundle);
+//                    int[] startingLocation = new int[2];
+//                    v.getLocationOnScreen(startingLocation);
+//                    startingLocation[0] += v.getWidth() / 2;
+//                    StoriesBean storiesEntity = new StoriesBean();
+//                    storiesEntity.setId(MainNewsItemAdapter.getEntities().get(getPosition()).getId());
+//                    storiesEntity.setTitle(MainNewsItemAdapter.getEntities().get(getPosition()).getTitle());
+//                    Bundle bundle = new Bundle();
+//                    bundle.putIntArray(Constant.START_LOCATION, startingLocation);
+//                    bundle.putSerializable("entity",storiesEntity);
+//                    bundle.putBoolean("isLight", ((MainActivity) context).isLight());
+//                    LogUtils.e("isLight:"+((MainActivity) context).isLight());
+//                    AppContext.getInstance().intentJump((Activity) MainNewsItemAdapter.context,LatestContentActivity.class,bundle);
                 }
             });
         }

@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.chen.develop.zhihudaily">
 
+    <!-- 网络访问权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.write_external_storage" />
+    <!-- 获取网络信息状态，如当前的网络连接是否有效 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 读取手机状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序写入外部存储，如SD卡上写文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 获取错略位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 获取WiFi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name=".App.AppContext"
+        android:name="com.chen.common.App.AppContext"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:theme">
         <activity
             android:name=".Activity.SplashActivity"
             android:label="@string/app_name"
@@ -35,7 +45,34 @@
         <activity
             android:name=".Activity.MainActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.WeatherActivity"
+            android:label="@string/title_activity_weather"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.CityListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activity.BaiduSdkWallDemo"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+        <activity
+            android:name=".Activity.ShowInActivity"
+            android:label="@string/baidu_name"></activity>
+        <activity
+            android:name="com.baidu.mobads.appoffers.OffersActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation" />
+        <!--友盟统计-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="581adedda40fa35143000b8c" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID" />
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="f2cf011d" />
+        <!--百度Ad-->
     </application>
 
 </manifest>

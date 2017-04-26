@@ -2,23 +2,26 @@ package com.chen.develop.zhihudaily.Activity;
 
 import android.content.Intent;
 import android.text.TextUtils;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chen.develop.zhihudaily.App.BaseActivity;
+import com.chen.common.App.BaseActivity;
+import com.chen.common.NetUtils.ParserUtils;
+import com.chen.common.Utils.HttpUtils;
+import com.chen.common.Utils.ImageLoaderManager;
+import com.chen.common.Utils.TextHttpResponseHandler;
 import com.chen.develop.zhihudaily.Bean.SplashBean;
 import com.chen.develop.zhihudaily.Config.Interface;
-import com.chen.develop.zhihudaily.NetUtils.ParserUtils;
 import com.chen.develop.zhihudaily.R;
-import com.chen.develop.zhihudaily.Utils.HttpUtils;
-import com.chen.develop.zhihudaily.Utils.TextHttpResponseHandler;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import butterknife.Bind;
 import cz.msebera.android.httpclient.Header;
+
+
 
 public class SplashActivity extends BaseActivity {
     private android.os.Handler handler = new android.os.Handler();
@@ -31,6 +34,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected int getContentViewLayoutId() {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         return R.layout.activity_scrolling;
     }
 
@@ -64,9 +68,15 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 if (!TextUtils.isEmpty(responseString)) {
-                    SplashBean bean = ParserUtils.parser(responseString, SplashBean.class);
-                    ImageLoader.getInstance().displayImage(bean.getImg(), splash_ima);
-                    splash_text.setText(bean.getText());
+                    try {
+                        SplashBean bean = ParserUtils.parser(responseString, SplashBean.class);
+                        ImageLoaderManager.getInstance(SplashActivity.this).display(SplashActivity.this,bean.getImg(), splash_ima);
+                        splash_text.setText(bean.getText());
+                    } catch (Exception w) {
+
+                    }
+
+
 
                 }
             }

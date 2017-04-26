@@ -1,3 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\httpclient-4.4.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c8d96f6fd2bcc179c312da33ee670a71188cc60d">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\httpclient-4.4.1.1_b77392adf5e8cd3311e9194f55f3a642f47585c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\zhihu.daily\PullToRefreshRecycleView\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9ddc8ef28f25989e589f4a8d598a8af7fbcf4204">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\zhihu.daily-PullToRefreshRecycleView-unspecified_b510792b2fc2fb2867b3f1d2b1714d19035ad2ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.4.0_046ae03293dc1cdbf95bf5ac8193826cb1916103.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.bigkoo\convenientbanner\2.0.5\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b99798f653c15a17af6779bb9f01a66f2ee6e6ef">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.bigkoo-convenientbanner-2.0.5_7700f39245ab1466d9cb1e11373090d02242d11b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.4.0_370c8efaace74484610c885bb97defb8f9152e09.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\chen.zhiwei\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\library-2.4.0_312964fb214be9114689f4c2635ffcb5409aba5f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\universal-image-loader-1.9.2-with-sources.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="49e19950e37eaab53e3301d8e382b05b20cfbb72">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.2-with-sources_165a30d29ada0ee69a08f1a7c20a99304e9e82b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.4.0_78102436226f353614e08edb281a5e50e89738f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\butterknife-7.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\butterknife-7.0.1_5644ae47acfa8c542ecd1c5855ac3ecd954bf599.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\support-annotations-24.0.0_d6267d108258454c1b7083440e9338e477d733ce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_7044932cbc2dbfa7c38c2f5cacc89528a8c7f8bb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\utdid4all-1.0.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4345fa0a5a7768f2f9c86aaab7db9e2906765193">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\utdid4all-1.0.4_0777d84917900d38cb3acb0a275c8eb08fb0adb9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\ormlite-core-4.48.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\ormlite-core-4.48_723a34779b7dae5aef0b97ae884bf4a87abb2505.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.bigkoo\quicksidebar\1.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b5c5f57c15df9f73603806a7ec5c0e5d3d567b84">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.bigkoo-quicksidebar-1.0.1_0b798819d4fb253eebba05fbe62840ac5bd9c4ab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\umeng-analytics-v6.0.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="bad9f5cf2504747f6efded323edf71cf399e976a">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\umeng-analytics-v6.0.3_646a0138b6fc5c146daf02450d38be64813318b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.timehop.stickyheadersrecyclerview\library\0.4.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="23bbdaadbcb0f011e809e07ae0a91e24fa55365d">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.timehop.stickyheadersrecyclerview-library-0.4.3_2cc473bf0710e72efd66a1318d75544ceb5d7b77.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\fastjson-1.2.5.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9f675e9a1b2bf1224183005752a9214226e8aa8e">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\fastjson-1.2.5_65e2b8497666953fce3febf92e13938b0ef02fa8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8dd49930e4f9dde1a42d37e362b9fea8b1b69c0d">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.0.0_2600f02b08c6e1b8327562c062447f385994273c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_289df7be295d7965b9fc85a6f81952f2416f9b74.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\chen.zhiwei\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.gradle\packer-helper\1.0.4\225a50317c0dbd85435a94b38ff2f3de3a5d3c84\packer-helper-1.0.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="225a50317c0dbd85435a94b38ff2f3de3a5d3c84">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\packer-helper-1.0.4_7bd88163077ef8c43440f2c97554aaa6e600c3b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\ormlite-android-4.48.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="afa06f539a4026c10b247386312aa67404b80a16">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\ormlite-android-4.48_3ac9f4ce20ca3db1266293d2fbc02059914ab68f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.4.0_01fedeefe960fe9c8b372b639cd333709851c794.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\zhihu.daily\ChartView\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f02409fdf1b9579cf7a10e0bd561eb3390b667b8">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\zhihu.daily-ChartView-unspecified_eb52037ca46e936c53c9f7c43e0bc06596b76c11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\Baidu_MobAds_SDK_Wall.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="609877b9127c8b7f0f27c573012588b721b3623f">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\Baidu_MobAds_SDK_Wall_72b90c63ca854ce6a87f89f38772527562ff0eab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.4.0_d7a4a7887fc547655aa0310d923b0374fc6a5101.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\chen.zhiwei\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\glide-3.7.0_dcab251afc1a7a9f10679a0eef1e9435244e7a7c.jar" />
+    </item>
+
+</items>

@@ -1,28 +1,31 @@
 package com.chen.develop.zhihudaily.Fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.bigkoo.convenientbanner.ConvenientBanner;
+import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
+import com.bigkoo.convenientbanner.holder.Holder;
+import com.chen.common.NetUtils.ParserUtils;
+import com.chen.common.Utils.Constant;
+import com.chen.common.Utils.HttpUtils;
+import com.chen.common.Utils.ImageLoaderManager;
+import com.chen.common.Utils.LogUtils;
+import com.chen.common.Utils.TextHttpResponseHandler;
 import com.chen.develop.zhihudaily.Activity.MainActivity;
 import com.chen.develop.zhihudaily.Adapter.NewsItemAdapter;
 import com.chen.develop.zhihudaily.Bean.News;
 import com.chen.develop.zhihudaily.Bean.NewsLatestBean;
 import com.chen.develop.zhihudaily.Bean.StoriesEntity;
-import com.chen.develop.zhihudaily.NetUtils.ParserUtils;
 import com.chen.develop.zhihudaily.R;
-import com.chen.develop.zhihudaily.Utils.Constant;
-import com.chen.develop.zhihudaily.Utils.HttpUtils;
-import com.chen.develop.zhihudaily.Utils.LogUtils;
-import com.chen.develop.zhihudaily.Utils.TextHttpResponseHandler;
-import com.chen.develop.zhihudaily.View.Kanner;
 import com.lhh.ptrrv.library.PullToRefreshRecyclerView;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +36,6 @@ import java.util.List;
  */
 @SuppressLint("ValidFragment")
 public class NewsFragment extends BaseFragment {
-    private ImageLoader mImageLoader;
     private PullToRefreshRecyclerView lv_news;
     //    private ImageView iv_title;
 //    private TextView tv_title;
@@ -41,7 +43,7 @@ public class NewsFragment extends BaseFragment {
     //    private News news;
     private NewsItemAdapter mAdapter;
     private String title;
-    private Kanner kanner;
+    private ConvenientBanner kanner;
 
     public NewsFragment(String id, String title) {
         urlId = id;
@@ -73,13 +75,12 @@ public class NewsFragment extends BaseFragment {
     @Override
     protected void initViewsAndEvents() {
         ((MainActivity) getActivity()).setToolbarTitle(title);
-        mImageLoader = ImageLoader.getInstance();
         lv_news = (PullToRefreshRecyclerView) view.findViewById(R.id.lv_news);
-        View header = LayoutInflater.from(getActivity()).inflate(R.layout.kanner, lv_news, false);//headview,广告栏
-        kanner = (Kanner) header.findViewById(R.id.kanner);
-
-//增加headview
-        lv_news.addHeaderView(header);
+//        View header = LayoutInflater.from(getActivity()).inflate(R.layout.kanner, lv_news, false);//headview,广告栏
+//        kanner = (ConvenientBanner) header.findViewById(R.id.convenientBanner);
+//
+////增加headview
+//        lv_news.addHeaderView(header);
 
         lv_news.setSwipeEnable(true);//open swipe
         lv_news.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -175,10 +176,6 @@ public class NewsFragment extends BaseFragment {
 
                         News news = ParserUtils.parser(responseString, News.class);
                         List<StoriesEntity> storiesEntities = news.getStories();
-                        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                                .cacheInMemory(true)
-                                .cacheOnDisk(true)
-                                .build();
 //                        tv_title.setText(news.getDescription());
 //                        mImageLoader.displayImage(news.getImage(), iv_title, options);
                         List<NewsLatestBean.TopStoriesBean> list = new ArrayList<NewsLatestBean.TopStoriesBean>();
@@ -186,8 +183,8 @@ public class NewsFragment extends BaseFragment {
                         bean.setTitle(news.getDescription());
                         bean.setImage(news.getImage());
                         list.add(bean);
-                        kanner.setTopEntities(list);
-
+//                        kanner.setTopEntities(list);
+                        initAD(list);
 
                         mAdapter.ClearData();
                         mAdapter.addList(storiesEntities);
@@ -211,7 +208,75 @@ public class NewsFragment extends BaseFragment {
 //            db.close();
         }
     }
+
     public void updateTheme() {
         mAdapter.updateTheme();
+    }
+
+    public void ScrollTop() {
+        if (lv_news != null) {
+            lv_news.smoothScrollToPosition(lv_news.getTop());
+        }
+    }
+
+    /**
+     * 广告栏定义图片地址
+     */
+    public class LocalImageHolderView implements Holder<NewsLatestBean.TopStoriesBean> {
+        private ImageView imageView;
+
+        @Override
+        public View createView(Context context) {
+            imageView = new ImageView(context);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            return imageView;
+        }
+
+        @Override
+        public void UpdateUI(Context context, final int position, NewsLatestBean.TopStoriesBean data) {
+            ImageLoaderManager.getInstance(getActivity()).display(getActivity(),data.getImage(),imageView);
+        }
+    }
+
+    private void initAD(final List<NewsLatestBean.TopStoriesBean> storiesList) {
+        View header = LayoutInflater.from(getActivity()).inflate(R.layout.kanner, lv_news, false);//headview,广告栏
+        kanner = (ConvenientBanner) header.findViewById(R.id.convenientBanner);
+
+//自定义你的Holder，实现更多复杂的界面，不一定是图片翻页，其他任何控件翻页亦可。
+        kanner.setPages(
+                new CBViewHolderCreator<LocalImageHolderView>() {
+                    @Override
+                    public LocalImageHolderView createHolder() {
+                        return new LocalImageHolderView();
+                    }
+                }, storiesList)
+                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+                .setPageIndicator(new int[]{R.mipmap.dot_blur, R.mipmap.dot_focus})
+                //设置指示器的方向
+                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.ALIGN_PARENT_RIGHT).startTurning(3000);
+        //设置翻页的效果，不需要翻页效果可用不设
+        //.setPageTransformer(Transformer.DefaultTransformer);    集成特效之后会有白屏现象，新版已经分离，如果要集成特效的例子可以看Demo的点击响应。
+//        convenientBanner.setManualPageable(false);//设置不能手动影响
+
+//        kanner.setOnItemClickListener(new OnItemClickListener() {
+//            @Override
+//            public void onItemClick(int position) {
+////                int[] startingLocation = new int[2];
+////                v.getLocationOnScreen(startingLocation);
+////                startingLocation[0] += v.getWidth() / 2;
+//                StoriesBean storiesEntity = new StoriesBean();
+//                storiesEntity.setId(storiesList.get(position).getId());
+//                storiesEntity.setTitle(storiesList.get(position).getTitle());
+//                Bundle bundle = new Bundle();
+////                bundle.putIntArray(Constant.START_LOCATION, startingLocation);
+//                bundle.putSerializable("entity", storiesEntity);
+//                bundle.putBoolean("isLight", isLight);
+//                AppContext.getInstance().intentJump(getActivity(), LatestContentActivity.class, bundle);
+//            }
+//        });
+
+
+//增加headview
+        lv_news.addHeaderView(header);
     }
 }

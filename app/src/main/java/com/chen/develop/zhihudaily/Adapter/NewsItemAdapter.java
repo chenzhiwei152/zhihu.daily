@@ -13,16 +13,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.chen.common.Utils.ImageLoaderManager;
 import com.chen.develop.zhihudaily.Activity.MainActivity;
 import com.chen.develop.zhihudaily.Activity.NewsContentActivity;
-import com.chen.develop.zhihudaily.App.AppContext;
+import com.chen.common.App.AppContext;
 import com.chen.develop.zhihudaily.Bean.StoriesBean;
 import com.chen.develop.zhihudaily.Bean.StoriesEntity;
 import com.chen.develop.zhihudaily.R;
-import com.chen.develop.zhihudaily.Utils.Constant;
-import com.chen.develop.zhihudaily.Utils.PreUtils;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
+import com.chen.common.Utils.Constant;
+import com.chen.common.Utils.PreUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +36,6 @@ import butterknife.ButterKnife;
 public class NewsItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private static List<StoriesEntity> entities;
     private static Context context;
-    private ImageLoader mImageloader;
-    private DisplayImageOptions options;
     private boolean isLight;
     private final LayoutInflater mLayoutInflater;
 
@@ -46,11 +43,6 @@ public class NewsItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.context = context;
         entities = items;
         isLight = ((MainActivity) context).isLight();
-        mImageloader = ImageLoader.getInstance();
-        options = new DisplayImageOptions.Builder()
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .build();
         isLight = ((MainActivity) context).isLight();
         mLayoutInflater = LayoutInflater.from(context);
     }
@@ -66,11 +58,6 @@ public class NewsItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.context = context;
         this.entities = new ArrayList<>();
         isLight = ((MainActivity) context).isLight();
-        mImageloader = ImageLoader.getInstance();
-        options = new DisplayImageOptions.Builder()
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .build();
         isLight = ((MainActivity) context).isLight();
         mLayoutInflater = LayoutInflater.from(context);
     }
@@ -103,7 +90,7 @@ public class NewsItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         ((ImageViewHolder) viewHolder).tv_title.setText(entity.getTitle());
         if (entity.getImages() != null) {
             ((ImageViewHolder) viewHolder).iv_title.setVisibility(View.VISIBLE);
-            mImageloader.displayImage(entity.getImages().get(0), ((ImageViewHolder) viewHolder).iv_title, options);
+            ImageLoaderManager.getInstance(context).display(context,entity.getImages().get(0), ((ImageViewHolder) viewHolder).iv_title);
         } else {
             ((ImageViewHolder) viewHolder).iv_title.setVisibility(View.GONE);
         }

@@ -23,4 +23,5 @@
     <color name="dark_menu_listview_textcolor">@android:color/darker_gray</color>
     <color name="clicked_tv_textcolor">@android:color/darker_gray</color>
     <color name="rippelColor">#FFFFFF</color>
+    <color name="color_50BEB4">#50BEB4</color>
 </resources>

@@ -1,36 +1,78 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'packer'
 android {
+    signingConfigs {
+        releaseConfig {
+            keyAlias 'flybird'
+            keyPassword '123456'
+            storeFile file('keystore.jks')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.chen.develop.zhihudaily"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+
+            // 移除无用的resource文件
+            shrinkResources true
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+        }
+        debug {
+            signingConfig signingConfigs.releaseConfig
         }
     }
+
+    //修改生成的apk名字
+//    applicationVariants.all { variant ->
+//        variant.outputs.each { output ->
+//            def oldFile = output.outputFile
+//            def newName = '';
+//            if (variant.buildType.name.equals('release')) {
+////                println(variant.productFlavors[0].name)
+//                // 输出apk名称为wooyun_v1.0_wandoujia.apk
+//                def fileName = "zhihuDaily${defaultConfig.versionName}_${markets.}.apk"
+//                output.outputFile = new File(outputFile.parent, fileName)
+//            }
+//
+//        }
+//    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
     compile files('libs/butterknife-7.0.1.jar')
     compile files('libs/fastjson-1.2.5.jar')
     compile files('libs/httpclient-4.4.1.1.jar')
     compile files('libs/ormlite-android-4.48.jar')
     compile files('libs/ormlite-core-4.48.jar')
-    compile files('libs/universal-image-loader-1.9.2-with-sources.jar')
-    compile project(':library')
     compile 'com.android.support:appcompat-v7:23.4.0'
+    compile project(':PullToRefreshRecycleView')
+    compile project(':ChartView')
+    compile project(':quicksidebar')
+    compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:cardview-v7:24.0.0'
+    compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3'
+    compile 'com.mcxiaoke.gradle:packer-helper:1.0.4'
+    compile files('libs/umeng-analytics-v6.0.3.jar')
+    compile files('libs/utdid4all-1.0.4.jar')
+    compile files('libs/Baidu_MobAds_SDK_Wall.jar')
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }

@@ -1,1 +1,1 @@
-include ':app', ':library', ':Library'
+include ':app', ':PullToRefreshRecycleView', ':ChartView', ':quicksidebar'

@@ -24,19 +24,18 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
-import com.chen.develop.zhihudaily.App.BaseActivity;
+import com.chen.common.App.BaseActivity;
+import com.chen.common.DB.WebCacheDbHelper;
+import com.chen.common.NetUtils.ParserUtils;
+import com.chen.common.Utils.Constant;
+import com.chen.common.Utils.HttpUtils;
+import com.chen.common.Utils.ImageLoaderManager;
+import com.chen.common.Utils.TextHttpResponseHandler;
+import com.chen.common.Utils.WebUtils;
+import com.chen.common.View.RevealBackgroundView;
 import com.chen.develop.zhihudaily.Bean.NewsDetailBean;
 import com.chen.develop.zhihudaily.Bean.StoriesBean;
-import com.chen.develop.zhihudaily.DB.WebCacheDbHelper;
-import com.chen.develop.zhihudaily.NetUtils.ParserUtils;
 import com.chen.develop.zhihudaily.R;
-import com.chen.develop.zhihudaily.Utils.Constant;
-import com.chen.develop.zhihudaily.Utils.HttpUtils;
-import com.chen.develop.zhihudaily.Utils.LogUtils;
-import com.chen.develop.zhihudaily.Utils.TextHttpResponseHandler;
-import com.chen.develop.zhihudaily.View.RevealBackgroundView;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.io.Serializable;
 
@@ -65,6 +64,7 @@ public class LatestContentActivity extends BaseActivity implements RevealBackgro
     private String css;
     private String context;
     private WebCacheDbHelper dbHelper;
+
     @Override
     protected int getContentViewLayoutId() {
         return R.layout.activity_latest_content;
@@ -80,7 +80,7 @@ public class LatestContentActivity extends BaseActivity implements RevealBackgro
             Serializable serializable = bundle.getSerializable("entity");
             entity = (StoriesBean) serializable;
             mFrom = bundle.getString("from");
-            isLight =bundle.getBoolean("isLight", true);
+            isLight = bundle.getBoolean("isLight", true);
         } catch (Exception e) {
 
         }
@@ -159,10 +159,9 @@ public class LatestContentActivity extends BaseActivity implements RevealBackgro
                     parseJson(responseString);
 
 
-
                 }
             });
-        }else {
+        } else {
             SQLiteDatabase db = dbHelper.getReadableDatabase();
             Cursor cursor = db.rawQuery("select * from Cache where newsId = " + entity.getId(), null);
             if (cursor.moveToFirst()) {
@@ -173,38 +172,22 @@ public class LatestContentActivity extends BaseActivity implements RevealBackgro
             db.close();
         }
     }
-private void parseJson(String json){
-    if (!TextUtils.isEmpty(json)) {
 
-        NewsDetailBean detailBean = ParserUtils.parser(json, NewsDetailBean.class);
-        final ImageLoader imageloader = ImageLoader.getInstance();
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .cacheInMemory(true)
-                .cacheOnDisk(true)
-                .build();
+    private void parseJson(String json) {
+        if (!TextUtils.isEmpty(json)) {
 
-        try {
-            imageloader.displayImage(detailBean.getImage(), iv, options);
-        } catch (Exception e) {
+            NewsDetailBean detailBean = ParserUtils.parser(json, NewsDetailBean.class);
 
+            try {
+                ImageLoaderManager.getInstance(this).display(this,detailBean.getImage(), iv);
+            } catch (Exception e) {
+
+            }
+            String data = WebUtils.buildHtmlWithCss(detailBean.getBody(), detailBean.getCss(), !isLight);
+            mWebView.loadDataWithBaseURL(WebUtils.BASE_URL, data, WebUtils.MIME_TYPE, WebUtils.ENCODING, WebUtils.FAIL_URL);
         }
-        context = detailBean.getBody();
-        String cs = detailBean.getCss().get(0);
-        if (isLight) {
-
-            css = "<link rel=\"stylesheet\" href=\"file:///android_asset/css/news.css\" type=\"text/css\">";
-        } else {
-            css = "<link rel=\"stylesheet\" href=\"file:///android_asset/css/news_night.css\" type=\"text/css\">";
-
-        }
-        String html = "<html><head>" + css + "</head><body>" + context + "</body></html>";
-        html = html.replace("<div class=\"img-place-holder\">", "");
-        LogUtils.e("html:"+html);
-        mWebView.loadDataWithBaseURL("x-data://base", html, "text/html", "UTF-8", null);
-
-
     }
-}
+
     @Override
     protected void loadData() {
 

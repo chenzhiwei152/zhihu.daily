@@ -20,7 +20,7 @@
         android:textSize="13sp"
         android:visibility="gone" />
 
-    <com.chen.develop.zhihudaily.View.RippleView
+    <com.chen.common.View.RippleView
         android:id="@+id/rv_ripper"
         rv_centered="true"
         app:rv_color="@color/colorAccent"
@@ -67,5 +67,5 @@
             </RelativeLayout>
 
         </FrameLayout>
-    </com.chen.develop.zhihudaily.View.RippleView>
+    </com.chen.common.View.RippleView>
 </LinearLayout>
