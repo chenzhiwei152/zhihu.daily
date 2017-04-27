@@ -8,6 +8,28 @@
 ## 效果图
 
 * 首页---日间模式
+
 <img src="Screenshots/Screenshot_20170427-102849.png" width="420px"/>
+
 * 详情页---日间模式
+
 <img src="Screenshots/Screenshot_20170427-102924.png" width="420px"/>
+
+* 首页---夜间模式
+
+<img src="Screenshots/Screenshot_20170427-102855.png" width="420px"/>
+
+* 详情页---夜间模式
+
+<img src="Screenshots/Screenshot_20170427-102913.png" width="420px"/>
+
+* 抽屉栏
+
+<img src="Screenshots/Screenshot_20170427-102930.png" width="420px"/>
+
+* 天气
+
+<img src="Screenshots/Screenshot_20170427-102935.png" width="420px"/>
+
+
+
