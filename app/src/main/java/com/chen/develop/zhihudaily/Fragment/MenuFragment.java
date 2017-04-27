@@ -24,8 +24,8 @@ import com.chen.common.Utils.JsonHttpResponseHandler;
 import com.chen.common.Utils.LogUtils;
 import com.chen.common.Utils.PreUtils;
 import com.chen.common.Utils.TextHttpResponseHandler;
+import com.chen.common.Utils.Utils;
 import com.chen.develop.zhihudaily.Activity.MainActivity;
-import com.chen.develop.zhihudaily.Activity.ShowInActivity;
 import com.chen.develop.zhihudaily.Activity.WeatherActivity;
 import com.chen.develop.zhihudaily.Bean.NewsListItem;
 import com.chen.develop.zhihudaily.Bean.WeatherBean;
@@ -258,8 +258,7 @@ public class MenuFragment extends BaseFragment implements OnClickListener {
                 ((MainActivity) getActivity()).closeMenu();
                 break;
             case R.id.ll_menu:
-//                Utils.showToast("敬请期待~");
-                AppContext.getInstance().intentJump(getActivity(), ShowInActivity.class);
+                Utils.showToast("敬请期待~");
                 break;
         }
     }

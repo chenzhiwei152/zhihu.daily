@@ -201,15 +201,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\Baidu_MobAds_SDK_Wall.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="609877b9127c8b7f0f27c573012588b721b3623f">
-        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\Baidu_MobAds_SDK_Wall_72b90c63ca854ce6a87f89f38772527562ff0eab.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"

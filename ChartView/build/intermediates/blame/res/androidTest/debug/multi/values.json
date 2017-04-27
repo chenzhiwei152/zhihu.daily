@@ -1,0 +1,416 @@
+[
+    {
+        "outputFile": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\ChartView\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 899,
+                    "endColumn": 50,
+                    "endOffset": 945
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 899,
+                        "endColumn": 50,
+                        "endOffset": 945
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 950,
+                    "endColumn": 44,
+                    "endOffset": 990
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 950,
+                        "endColumn": 44,
+                        "endOffset": 990
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 995,
+                    "endColumn": 41,
+                    "endOffset": 1032
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 995,
+                        "endColumn": 41,
+                        "endOffset": 1032
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 1037,
+                    "endColumn": 48,
+                    "endOffset": 1081
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 1037,
+                        "endColumn": 48,
+                        "endOffset": 1081
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1086,
+                    "endColumn": 40,
+                    "endOffset": 1122
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 1086,
+                        "endColumn": 40,
+                        "endOffset": 1122
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1127,
+                    "endColumn": 44,
+                    "endOffset": 1167
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1127,
+                        "endColumn": 44,
+                        "endOffset": 1167
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1172,
+                    "endColumn": 41,
+                    "endOffset": 1209
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1172,
+                        "endColumn": 41,
+                        "endOffset": 1209
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "E:\\AndroidProgectDevelop\\ZhihuDaily\\ChartView\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 899,
+                    "endColumn": 50,
+                    "endOffset": 945
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 899,
+                        "endColumn": 50,
+                        "endOffset": 945
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 950,
+                    "endColumn": 44,
+                    "endOffset": 990
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 950,
+                        "endColumn": 44,
+                        "endOffset": 990
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 995,
+                    "endColumn": 41,
+                    "endOffset": 1032
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 995,
+                        "endColumn": 41,
+                        "endOffset": 1032
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 1037,
+                    "endColumn": 48,
+                    "endOffset": 1081
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 1037,
+                        "endColumn": 48,
+                        "endOffset": 1081
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1086,
+                    "endColumn": 40,
+                    "endOffset": 1122
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 1086,
+                        "endColumn": 40,
+                        "endOffset": 1122
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1127,
+                    "endColumn": 44,
+                    "endOffset": 1167
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1127,
+                        "endColumn": 44,
+                        "endOffset": 1167
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1172,
+                    "endColumn": 41,
+                    "endOffset": 1209
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\ZhihuDaily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1172,
+                        "endColumn": 41,
+                        "endOffset": 1209
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "E:\\AndroidProgectDevelop\\zhihu.daily\\ChartView\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 899,
+                    "endColumn": 50,
+                    "endOffset": 945
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 899,
+                        "endColumn": 50,
+                        "endOffset": 945
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 950,
+                    "endColumn": 44,
+                    "endOffset": 990
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 950,
+                        "endColumn": 44,
+                        "endOffset": 990
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 995,
+                    "endColumn": 41,
+                    "endOffset": 1032
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 995,
+                        "endColumn": 41,
+                        "endOffset": 1032
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 1037,
+                    "endColumn": 48,
+                    "endOffset": 1081
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 1037,
+                        "endColumn": 48,
+                        "endOffset": 1081
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1086,
+                    "endColumn": 40,
+                    "endOffset": 1122
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 1086,
+                        "endColumn": 40,
+                        "endOffset": 1122
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1127,
+                    "endColumn": 44,
+                    "endOffset": 1167
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1127,
+                        "endColumn": 44,
+                        "endOffset": 1167
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1172,
+                    "endColumn": 41,
+                    "endOffset": 1209
+                },
+                "from": {
+                    "file": "E:\\AndroidProgectDevelop\\zhihu.daily\\ChartView\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1172,
+                        "endColumn": 41,
+                        "endOffset": 1209
+                    }
+                }
+            }
+        ]
+    }
+]
