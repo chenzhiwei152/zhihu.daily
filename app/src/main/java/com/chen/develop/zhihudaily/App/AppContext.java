@@ -5,7 +5,6 @@ import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.chen.develop.zhihudaily.Manager.ChatImageLoaderManager;
 import com.chen.develop.zhihudaily.R;
 import com.chen.develop.zhihudaily.Utils.PreferencesUtils;
 
@@ -21,7 +20,6 @@ public class AppContext extends Application {
         instance=this;
         //本地存储
         PreferencesUtils.initPrefs(this);
-        ChatImageLoaderManager.getInstance(this);
     }
     /**
      * @return 获取实例

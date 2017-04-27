@@ -6,7 +6,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.chen.common.App.BaseActivity;
@@ -30,7 +30,7 @@ public class SplashActivity extends BaseActivity {
     @Bind(R.id.splash_ima)
     ImageView splash_ima;
     @Bind(R.id.ll_toast)
-    LinearLayout ll_toast;
+    RelativeLayout ll_toast;
 
     @Override
     protected int getContentViewLayoutId() {
@@ -53,13 +53,14 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void loadData() {
+        LoadImage();
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.in_from_bottom);
         ll_toast.startAnimation(animation);
-        LoadImage();
+
     }
 
     private void LoadImage() {
-        HttpUtils.get(Interface.START, new TextHttpResponseHandler() {
+        HttpUtils.get(Interface.BASEURL_1+Interface.START,false, new TextHttpResponseHandler() {
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
 
@@ -70,8 +71,8 @@ public class SplashActivity extends BaseActivity {
                 if (!TextUtils.isEmpty(responseString)) {
                     try {
                         SplashBean bean = ParserUtils.parser(responseString, SplashBean.class);
-                        ImageLoaderManager.getInstance(SplashActivity.this).display(SplashActivity.this,bean.getImg(), splash_ima);
-                        splash_text.setText(bean.getText());
+                        ImageLoaderManager.getInstance(SplashActivity.this).display(SplashActivity.this,bean.getCreatives().get(0).getUrl(), splash_ima);
+                        splash_text.setText("");
                     } catch (Exception w) {
 
                     }
