@@ -4,5 +4,10 @@
 1、首页、列表、详情
 2、主题列表、详情
 3、切换夜间、日间模式
+4、实时天气
+## 效果图
 
+* 首页---日间模式
 <img src="Screenshots/Screenshot_20170427-102849.png" width="420px"/>
+* 详情页---日间模式
+<img src="Screenshots/Screenshot_20170427-102924.png" width="420px"/>
