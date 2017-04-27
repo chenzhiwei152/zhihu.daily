@@ -72,7 +72,6 @@ dependencies {
     compile 'com.mcxiaoke.gradle:packer-helper:1.0.4'
     compile files('libs/umeng-analytics-v6.0.3.jar')
     compile files('libs/utdid4all-1.0.4.jar')
-    compile files('libs/Baidu_MobAds_SDK_Wall.jar')
     compile 'com.bigkoo:convenientbanner:2.0.5'
     compile 'com.github.bumptech.glide:glide:3.7.0'
 }

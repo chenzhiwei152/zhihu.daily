@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\AndroidProgectDevelop\\ZhihuDaily\\PullToRefreshRecycleView\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "E:\\AndroidProgectDevelop\\ZhihuDaily\\PullToRefreshRecycleView\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidProgectDevelop\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "E:\\AndroidProgectDevelop\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidProgectDevelop\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "E:\\AndroidProgectDevelop\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidProgectDevelop\\ZhihuDaily\\PullToRefreshRecycleView\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "E:\\AndroidProgectDevelop\\ZhihuDaily\\PullToRefreshRecycleView\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\res\\merged\\androidTest\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "E:\\AndroidProgectDevelop\\ZhihuDaily\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    }
+]

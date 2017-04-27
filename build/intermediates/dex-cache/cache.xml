@@ -57,15 +57,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="E:\AndroidProgectDevelop\zhihu.daily\app\libs\universal-image-loader-1.9.2-with-sources.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="49e19950e37eaab53e3301d8e382b05b20cfbb72">
-        <dex dex="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.2-with-sources_165a30d29ada0ee69a08f1a7c20a99304e9e82b9.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="E:\AndroidProgectDevelop\zhihu.daily\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"

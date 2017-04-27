@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\AndroidProgectDevelop\\ZhihuDaily\\PullToRefreshRecycleView\\build\\intermediates\\res\\merged\\release\\layout-v11\\abc_screen_content_include.xml",
+        "source": "E:\\AndroidProgectDevelop\\ZhihuDaily\\PullToRefreshRecycleView\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\layout-v11\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "E:\\AndroidProgectDevelop\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\res\\merged\\release\\layout-v11\\abc_screen_content_include.xml",
+        "source": "E:\\AndroidProgectDevelop\\zhihu.daily\\PullToRefreshRecycleView\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.1.1\\res\\layout-v11\\abc_screen_content_include.xml"
+    }
+]
